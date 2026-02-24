@@ -11,6 +11,10 @@
 void sesion1_ej1()
 {
     /* Completar con el código del ejercicio 1 */
+    char a, b, c;
+    printf("Introduce tus tres iniciales: ");
+    scanf(" %c %c %c", &a, &b, &c);
+    printf("Hola %c%c%c", a, b, c);
     
 }
 
