@@ -118,3 +118,53 @@ void exercici6(){
         ant2 = actual; 
     }
 }
+
+
+void exercici8(){
+    int valors[10] = {1,2,3,4,5,6,7,8,9,10};
+    int i, aux;
+    
+    
+    /*Mostrem vector original*/
+    printf("Vector original: %d", valors[0]);
+    for (i = 1; i < 10; i++){
+        printf(",  %d", valors[i]);
+    }
+    for (i = 0; i < 5; i++){
+        aux = valors[i];
+        valors[i] = valors[10-1-i];
+        valors[10-1-i] = aux;
+        
+    }
+    
+    
+    /*Mostrem vector intvertit*/
+    
+    printf("\nVector invertit: %d", valors[0]);
+    for (i = 1; i < 10; i++){
+        printf(",  %d", valors[i]);
+    }
+}
+
+
+void exercici9(){
+    
+    float matriu[3][3] = {1.0, 0.0, 0.0,
+                          0.0, 1.0, 0.0, 
+                          0.0, 0.0, 1.0};
+    
+    
+    int i, j, simetrica = 1;
+    
+    for (i = 0; i < 3; i++){
+        for (j = 0; j < 3; j++){
+            if (matriu[i][j] != matriu[j][i]){
+                simetrica = 0;
+            }
+        }
+    }
+    if (simetrica){printf("Es simetrica \n");}
+    else {printf("No es simetrica \n");}
+    
+    
+}

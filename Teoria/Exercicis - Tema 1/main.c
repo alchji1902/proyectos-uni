@@ -6,7 +6,7 @@
  * 
  */
 int main(int argc, char** argv) {
-    exercici6();
+    exercici9();
     return (EXIT_SUCCESS);
 }
 
