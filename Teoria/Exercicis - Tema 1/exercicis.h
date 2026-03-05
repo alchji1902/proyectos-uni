@@ -14,12 +14,44 @@
 #ifndef EXERCICIS_H
 #define EXERCICIS_H
 
+#define PI 3.145
+#define MAX_ALUMNES 50
+
+
+typedef struct {
+    int numero;
+    char lletra;
+}t_nif;
+
+
+typedef struct {
+    t_nif nif;
+    float nota_lab;
+    float nota_par;
+    float nota_fin;
+}t_alumne;
+
+typedef struct {
+    int grup;
+    int num_matriculats;
+    t_alumne matriculats[MAX_ALUMNES];
+}t_grup;
+
+
+
 void exercici1();
 void exercici2();
 void exercici3();
 void exercici4();
 void exercici5();
 void exercici6();
+void exercici7();
+void exercici8();
+void exercici9();
+void exercici10();
+void exercici11();
+
+
 
 
 

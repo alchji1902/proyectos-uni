@@ -8,8 +8,9 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <string.h>
+#include "exercicis.h"
 
-#define PI 3.145
 
 void exercici1()
 {
@@ -120,6 +121,13 @@ void exercici6(){
 }
 
 
+void exercici7(){
+    
+    /*Codi per el exercici 7*/
+    printf("Exercici 7");
+}
+
+
 void exercici8(){
     int valors[10] = {1,2,3,4,5,6,7,8,9,10};
     int i, aux;
@@ -165,6 +173,128 @@ void exercici9(){
     }
     if (simetrica){printf("Es simetrica \n");}
     else {printf("No es simetrica \n");}
+    
+    
+}
+
+
+
+void exercici10(){
+    /*Codig per el exercici 10*/
+    char cadena1[40], cadena2[40];
+    
+    printf("Cadena 1: ");
+    fgets(cadena1, 40, stdin); /* fgets() també llegeix el \n */
+    
+    printf("Cadena 2: ");
+    fgets(cadena2, 40, stdin);
+    
+    if (strlen(cadena1) > strlen(cadena2))
+        printf("Cadena 1 es mes llarga: %s", cadena1);
+    else if (strlen(cadena1) < strlen(cadena2))
+        printf("Cadena 2 es mes llarga: %s", cadena2);
+    else
+        printf("Tenen longitud identica \n");
+    
+}
+
+
+void exercici11() {
+    
+    /*Codi per l'exercici 11*/
+    
+    char paraula[29];
+    int i;
+    
+    
+    printf("Paraula: ");
+    scanf("%s", paraula);
+    
+    if (strlen(paraula) > 0) {
+        
+        printf("%c", paraula[0]);
+        for (i = 1; i < strlen(paraula); i++){
+            printf(" - %c", paraula[i]);
+            
+        }
+    }
+}
+
+
+void exercici12(){
+    
+    t_nif nif1, nif2;
+    
+    printf("NIF 1: ");
+    scanf("%d-%c",&nif1.numero, &nif1.lletra);
+    
+    printf("NIF 2: ");
+    scanf("%d-%c", &nif2.numero, &nif2.lletra);
+    
+    if (nif1.numero == nif2.numero && nif1.lletra == nif2.lletra) 
+        printf("Son el mateix NIF \n");
+    else
+        printf("Son NIF diferents \n");
+    
+    
+}
+
+
+void exercici13() {
+    
+    /*t_alumne a;
+    
+    
+    a.nif.numero = 11111111;
+    a.nif.lletra = 'Q';
+    a.nota_lab = 7.0;
+    a.nota_par = 4.5;
+    a.nota_fin = 5.0; */
+    
+    t_alumne a = {{111111111, 'A'}, 7.0, 4.5, 5.0};
+    float nota_final_prd;
+    
+    
+    if (a.nota_par > a.nota_fin)
+        nota_final_prd = 0.35*a.nota_lab + 0.15*a.nota_par + 0.5*a.nota_fin;
+    else
+        nota_final_prd = 0.35*a.nota_lab + 0.65*a.nota_fin;
+    
+    printf("Nota final PRD %02f\n", nota_final_prd);
+    
+    
+    
+    
+}
+
+
+
+void exercici14() {
+    
+    t_alumne a1 = {{11111111, 'A'}, 0, 0, 0};
+    t_alumne a2 = {{22222222, 'B'}, 0, 0, 0};
+    t_alumne a3 = {{33333333, 'C'}, 0, 0, 0};
+    t_grup g;
+    
+    int i;
+    
+    
+    g.grup = 10;
+    g.num_matriculats = 3;
+    g.matriculats[0] = a1;
+    g.matriculats[1] = a2;
+    g.matriculats[2] = a3;
+    
+    
+    printf("Alumnes matriculats al grup \n");
+    
+    for (i = 0; i < g.num_matriculats; i++)
+        printf("%d-%c\n", g.matriculats[i].nif.numero,g.matriculats[i].nif.lletra);
+    
+    
+    
+    
+    
     
     
 }
