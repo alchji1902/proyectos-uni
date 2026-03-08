@@ -11,7 +11,7 @@
 int main(int argc, char** argv) {
 
     /* Llamar a función para ejecutar el código del ejercicio */
-    sesion2_ej3();
+    sesion2_ej8();
     
     return (EXIT_SUCCESS);
 }
