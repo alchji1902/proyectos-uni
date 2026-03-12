@@ -44,4 +44,5 @@ void exercici6()
     printf("%f+%fi", res.real, res.imaginaria);
     
     
+    
 }
