@@ -30,5 +30,10 @@ float calcular_mod(t_complex c);
 
 float calcular_arg(t_complex c);
 
+
+void sumar(t_complex *res, t_complex c1, t_complex c2);
+
+
+
 #endif /* COMPLEX_H */
 

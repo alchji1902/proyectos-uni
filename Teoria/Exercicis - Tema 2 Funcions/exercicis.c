@@ -25,7 +25,23 @@ void exercici5()
     printf("\nEl seu modul es: %f\n", calcular_mod(c));
     
     printf("El seu argument es: %f radians\n", calcular_arg(c));
+       
+}
+
+
+void exercici6()
+{
+    t_complex c1, c2, res;
+    c1 = llegir_complex();
+    c2 = llegir_complex();
     
+    
+    
+    sumar(res, c1, c2);
+    
+    printf("La suma entre %f+%fi i %f+%fi es: ", c1.real, c1.imaginaria, c2.real, c2.imaginaria);
+    
+    printf("%f+%fi", res.real, res.imaginaria);
     
     
 }
