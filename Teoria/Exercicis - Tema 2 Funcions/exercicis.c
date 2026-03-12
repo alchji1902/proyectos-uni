@@ -32,12 +32,18 @@ void exercici5()
 void exercici6a()
 {
     t_complex c1, c2, res;
+    
+    t_complex *res, *c1, *c2 = &res, &c1, &c2;
+    
     c1 = llegir_complex();
     c2 = llegir_complex();
     
     
     
-    sumar(res, c1, c2);
+    
+    
+    
+    sumar(*res, *c1, *c2);
     
     printf("La suma entre %f+%fi i %f+%fi es: ", c1.real, c1.imaginaria, c2.real, c2.imaginaria);
     
@@ -53,7 +59,7 @@ void exercici6b()
     
     
     
-    restar(res, c1, c2);
+    restar(*res, *c1, *c2);
     
     printf("La resta entre %f+%fi i %f+%fi es: ", c1.real, c1.imaginaria, c2.real, c2.imaginaria);
     
@@ -71,7 +77,7 @@ void exercici6c()
     
     
     
-    multiplicar(res, c1, c2);
+    multiplicar(*res, *c1, *c2);
     
     printf("La multiplicacio entre %f+%fi i %f+%fi es: ", c1.real, c1.imaginaria, c2.real, c2.imaginaria);
     
@@ -80,7 +86,7 @@ void exercici6c()
     
 }
 
-void exercici6d()
+/* void exercici6d()
 {
     t_complex c1, c2, res;
     
@@ -89,11 +95,11 @@ void exercici6d()
     
     
     
-    multiplicar(res, c1, c2);
+    dividir(*res, *c1, *c2);
     
     printf("La divisió entre %f+%fi i %f+%fi es: ", c1.real, c1.imaginaria, c2.real, c2.imaginaria);
     
     printf("%f / %fi", res.real, res.imaginaria);
     
     
-}
+}*/
