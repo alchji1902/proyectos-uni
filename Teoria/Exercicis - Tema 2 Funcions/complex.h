@@ -33,6 +33,14 @@ float calcular_arg(t_complex c);
 
 void sumar(t_complex *res, t_complex c1, t_complex c2);
 
+void restar(t_complex *res, t_complex c1, t_complex c2);
+
+void multiplicar(t_complex *res, t_complex c1, t_complex c2);
+
+void dividir(t_complex *res, t_complex c1, t_complex c2);
+
+
+
 
 
 #endif /* COMPLEX_H */

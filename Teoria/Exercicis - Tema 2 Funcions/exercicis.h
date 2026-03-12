@@ -16,6 +16,10 @@
 
 
 void exercici5();
+void exercici6a();
+void exercici6b();
+void exercici6c();
+void exercici6d();
 
 
 

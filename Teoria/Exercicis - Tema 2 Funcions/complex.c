@@ -77,6 +77,16 @@ void multiplicar(t_complex *res, t_complex c1, t_complex c2)
 {
     float mod = calcular_mod(c1)*calcular_mod(c2);
     float arg = calcular_arg(c1) + calcular_arg(c2);
+    
+    res->real = mod * cos(arg);
+    res->imaginaria = mod * sin(arg);
+}
+
+
+void dividir(t_complex *res, t_complex c1, t_complex c2)
+{
+    
+    
 }
 
 
