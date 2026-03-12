@@ -4,8 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>complex.h</itemPath>
-      <itemPath>exercicis.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -14,8 +12,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>complex.c</itemPath>
-      <itemPath>exercicis.c</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -42,18 +38,7 @@
         <cTool>
           <standard>2</standard>
         </cTool>
-        <linkerTool>
-          <commandLine>-lm</commandLine>
-        </linkerTool>
       </compileType>
-      <item path="complex.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="complex.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="exercicis.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="exercicis.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
@@ -78,14 +63,6 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="complex.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="complex.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="exercicis.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="exercicis.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
