@@ -134,9 +134,9 @@ void sesion3_ej2b()
     t_carta carta, alta;
     
     
-    char pals[4] = {'O', 'C', 'E', 'B'};
-    
-    char figuras[12] = {'R', 'C', 'S', '9', '8', '7', '6', '5', '4', '3', '2', '1'};
+    char pals[4] = {'B', 'E', 'C', 'O'};
+
+    char figuras[12] = {'1', '2', '3', '4', '5', '6', '7', '8', '9', 'S', 'C', 'R'};
     
     char car;
     
@@ -186,7 +186,7 @@ void sesion3_ej2b()
             }
             
             if (pos > pos_max_fig){
-                pos_max = pos;
+                pos_max_fig = pos;
                 alta.fig = carta.fig;
                 alta.pal = carta.pal;
             }
