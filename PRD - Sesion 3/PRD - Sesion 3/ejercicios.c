@@ -134,9 +134,9 @@ void sesion3_ej2b()
     t_carta carta, alta;
     
     
-    char pals[4] = 'O', 'C', 'E', 'B';
+    char pals[4] = {'O', 'C', 'E', 'B'};
     
-    char figuras[12] = 'R', 'C', 'S', '9', '8', '7', '6', '5', '4', '3', '2', '1';
+    char figuras[12] = {'R', 'C', 'S', '9', '8', '7', '6', '5', '4', '3', '2', '1'};
     
     char car;
     
