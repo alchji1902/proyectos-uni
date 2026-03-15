@@ -133,11 +133,10 @@ void sesion3_ej2b()
     /* Completar con el código del ejercicio 2.b */
     t_carta carta, alta;
     
-    char carta[5];
     
-    char pals[4] = O, C, E, B;
+    char pals[4] = 'O', 'C', 'E', 'B';
     
-    char figuras[12] = R, C, S, 9, 8, 7, 6, 5, 4, 3, 2, 1;
+    char figuras[12] = 'R', 'C', 'S', '9', '8', '7', '6', '5', '4', '3', '2', '1';
     
     char car;
     
@@ -164,7 +163,7 @@ void sesion3_ej2b()
         scanf("%c", &car);
         
         
-        for (i=0; i<5; i++) {
+        for (i=0; i<4; i++) {
             
             if (pals[i] == carta.pal){
                 pos = i;
@@ -177,10 +176,10 @@ void sesion3_ej2b()
             alta.pal = carta.pal;
         }
         
-        if (pos = pos_max){
-            for (j=0; j<11; j++){
+        if (pos == pos_max){
+            for (j=0; j<12; j++){
                 
-                if (figuras[i] == carta.fig){
+                if (figuras[j] == carta.fig){
                     pos_fig = j;
                 }    
                 
@@ -199,38 +198,38 @@ void sesion3_ej2b()
         
         
         
-    }while (car != '.')
+    }while (car != '.');
     
     
     
     
-    switch (carta.pal) {
+    switch (alta.pal) {
         case 'C':
-            printf("(%c,", carta.fig);
+            printf("(%c,", alta.fig);
             cambiar_color(RED);
-            printf("%c", carta.pal);
+            printf("%c", alta.pal);
             cambiar_color(DEFAULT);
             printf(")");
             break;
             
         case 'O':
-            printf("(%c,", carta.fig);
+            printf("(%c,", alta.fig);
             cambiar_color(YELLOW);
-            printf("%c", carta.pal);
+            printf("%c", alta.pal);
             cambiar_color(DEFAULT);
             printf(")");
             break;
         case 'B':
-            printf("(%c,", carta.fig);
+            printf("(%c,", alta.fig);
             cambiar_color(GREEN);
-            printf("%c", carta.pal);
+            printf("%c", alta.pal);
             cambiar_color(DEFAULT);
             printf(")");
             break;
         case 'E':
-            printf("(%c,", carta.fig);
+            printf("(%c,", alta.fig);
             cambiar_color(BLUE);
-            printf("%c", carta.pal);
+            printf("%c", alta.pal);
             cambiar_color(DEFAULT);
             printf(")");
             break;
