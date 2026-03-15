@@ -135,7 +135,18 @@ void sesion3_ej2b()
     
     char carta[5];
     
+    char pals[4] = O, C, E, B;
+    
+    char figuras[12] = R, C, S, 9, 8, 7, 6, 5, 4, 3, 2, 1;
+    
     char car;
+    
+    int i, pos, pos_fig, j;
+    
+    
+    int pos_max = 0;
+    
+    int pos_max_fig = 0;
     
     
     printf("Figura carta: r o R, c o C, s o S, 9, ... , 1\nPalo carta: o o O(OROS), c o C(COPAS), e o E(ESPADAS) o b o B(BASTOS)\n");
@@ -153,7 +164,36 @@ void sesion3_ej2b()
         scanf("%c", &car);
         
         
-        if (carta.fig )
+        for (i=0; i<5; i++) {
+            
+            if (pals[i] == carta.pal){
+                pos = i;
+            }    
+        }
+        
+        if (pos > pos_max){
+            pos_max = pos;
+            alta.fig = carta.fig;
+            alta.pal = carta.pal;
+        }
+        
+        if (pos = pos_max){
+            for (j=0; j<11; j++){
+                
+                if (figuras[i] == carta.fig){
+                    pos_fig = j;
+                }    
+                
+            }
+            
+            if (pos > pos_max_fig){
+                pos_max = pos;
+                alta.fig = carta.fig;
+                alta.pal = carta.pal;
+            }
+            
+        }
+        
         
         
         
