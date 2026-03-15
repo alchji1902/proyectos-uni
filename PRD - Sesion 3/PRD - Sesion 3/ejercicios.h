@@ -7,6 +7,14 @@
 #ifndef EJERCICIOS_H
 #define EJERCICIOS_H
 
+/*Ejercicio3*/
+#define NUM_ESTUDIANTES 3
+
+/*Ejercicio4*/
+#define MAX_CAPITALES 5
+
+
+/*Ejercicio2*/
 typedef struct {
     
     int num;        /* Numerador */
@@ -22,6 +30,16 @@ typedef struct {
     char pal;       /* Palo: 'O' (Oros), 'C' (Copas), 'E' (Espadas),
                     *           'B' (Bastos) */
 } t_carta;
+
+
+/*Ejercicio3*/
+typedef struct {
+    int id;
+    float nota_promedio;
+    int fecha_nacimiento; /* Formato: aaaammdd */
+    int num_asignaturas_aprobadas;
+    
+} t_estudiante;
 
 
 
