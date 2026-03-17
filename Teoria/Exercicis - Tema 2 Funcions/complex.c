@@ -95,3 +95,23 @@ void dividir(t_complex *res, t_complex c1, t_complex c2)
 
 
 
+void major(t_complex **ma, t_complex *c1, t_complex *c2)
+{
+    if (calcular_mod(*c1) >= calcular_mod(*c2))
+    {
+        /*El punter apuntat per ma cal que apunti a 
+         la variable apuntada per c1 */
+        *ma = c1;
+        
+    }
+    else 
+    {
+        /*El punter apuntat per ma cal que apunti a
+         la variable apuntada per c2 */
+        *ma = c2;
+    }
+    
+}
+
+
+

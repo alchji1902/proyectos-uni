@@ -39,6 +39,10 @@ void multiplicar(t_complex *res, t_complex c1, t_complex c2);
 
 void dividir(t_complex *res, t_complex c1, t_complex c2);
 
+void major(t_complex **ma, t_complex *c1, t_complex *c2);
+
+
+
 
 
 

@@ -101,3 +101,20 @@ void exercici6c()
     
     
 }*/
+
+
+void exercici7()
+{
+   
+    t_complex c1, c2, res;
+    
+    t_complex *cp = NULL;
+    
+    c1 = llegir_complex();
+    c2 = llegir_complex();
+    
+    printf("\n\nEl complex amb modul major es: ");
+    major(&cp, &c1, &c2);
+    
+    mostrar_complex(*cp);
+}
