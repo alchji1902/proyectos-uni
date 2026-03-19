@@ -23,7 +23,7 @@
 
 int main(int argc, char** argv) {
     
-    exercici5();
+    tests_vectors();
     
     return (EXIT_SUCCESS);
 }

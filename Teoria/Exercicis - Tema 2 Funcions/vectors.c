@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-#include <stdio>
+#include <stdio.h>
 #include "vectors.h"
 
 
@@ -43,3 +43,115 @@ void mostra_contingut (t_vector *v)
     
 }
 
+
+
+int insereix_valor_posicio(t_vector *v, int valor, int pos)
+{
+    /*Insereix valor a la posicio pos del vector
+     apuntat per v. Retorna -1 si el vector ja es ple.
+     -2 si pos representa una posicio d'insercio invalida, 
+     o 0 si valor inserit satisfactoriament*/
+    
+    
+    int i;
+    
+    if (v->num_valors == MAX_VAL)
+        return(-1);
+    
+    if (pos < 0 || pos > v->num_valors)
+        return (-2);
+    
+    for (i = v->num_valors -1; i >= pos; i--)
+    {
+        v->valors[i+1] = v->valors[i];
+    }
+    
+    v->valors[pos] = valor;
+    v->num_valors++;
+    return(0);
+    
+    
+    
+    
+    
+}
+
+
+int insereix_valor_ordenat(t_vector *v, int valor)
+{
+    
+    int pos = -1, i;
+    
+    if (v->num_valors == MAX_VAL)
+        return(-1);
+    
+    for (i = 0; i < v->num_valors && pos == -1; i++)
+    {
+     if (v->valors[i] >= valor)
+         pos = i;
+        
+    }
+    
+    if (pos == -1)
+        v->valors[v->num_valors] = valor;
+    else
+    {
+        for (i = v->num_valors -1; i < pos; i--)
+        {
+            
+        }
+    }
+    
+    
+    /*Opcio d'implementacio mes compacta:
+     
+     pos = 0
+     while (pos < v->num_valors && v->valors[pos] < valor)
+        poss++;
+     
+     for (i = v->num_valors-1; i  >= pos; i..)
+        v->valors[i+1] = v->valors[i];
+     
+     
+     v->valors[pos] = valor;
+     v->num_valors++;*/
+}
+
+
+int elimina_valor_posicio(t_vector *v, int pos)
+{
+    
+    int i;
+    
+    if (pos < 0 || pos >= v->num_valors)
+        return(-2);
+    
+    
+    for (i = pos+1; i < v->num_valors; i++)
+        v->valors[i-1] = v->valors[i];
+    
+    v->num_valors--;
+    return(0);
+    
+}
+
+
+
+void tests_vectors()
+{
+    
+    t_vector vec;
+    
+    vec.num_valors = 0;
+    
+    printf("%d\n", afegeix_valor(&vec, 1));
+    printf("%d\n", afegeix_valor(&vec, 3));
+    printf("%d\n", afegeix_valor(&vec, 5));
+    printf("%d\n", afegeix_valor(&vec, 7));
+    printf("%d\n", afegeix_valor(&vec, 9));
+    printf("%d\n\n", insereix_valor_posicio(&vec, 11, 1));
+    
+    mostra_contingut(&vec);
+    
+    
+}
