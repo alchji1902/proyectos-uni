@@ -15,6 +15,24 @@
 #define SESION4_EJ1_H
 
 
+typedef struct 
+{
+    int num;
+    int den;
+    
+}t_fraccion;
+
+
+t_fraccion leer_fraccion();
+
+void mostrar_fraccion(t_fraccion f);
+
+
+t_fraccion operaciones_fracciones(char operador, t_fraccion f1, t_fraccion f2);
+
+
+void sesion4_ej4();
+
 
 
 

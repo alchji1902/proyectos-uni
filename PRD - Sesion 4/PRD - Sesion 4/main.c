@@ -19,7 +19,7 @@
  */
 int main(int argc, char** argv) {
     
-    sesion4_ej3();
+    sesion4_ej4();
     
     return (EXIT_SUCCESS);
 }

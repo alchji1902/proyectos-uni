@@ -126,7 +126,7 @@ void sesion4_ej3()
             printf("Introduzca el numero combinatorio (m n): ");
             scanf(" (%d %d)", &m, &n);
             
-            printf("%f\n\n", combinatorio(m,n));
+            printf("%.2f\n\n", combinatorio(m,n));
         }
         else{
             printf("Ha escogido una opcion incorrecta. Vuelva a intentarlo!");
