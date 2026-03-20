@@ -15,13 +15,17 @@
 #define SESION4_EJ1_H
 
 
-int menu();
+unsigned int menu();
 
-int potencia(float real, int n);
+float potencia(float real, int n);
 
-float factorial(unsigned int arg);
+unsigned long long factorial(unsigned int arg);
+
+float combinatorio(int m, int n);
 
 void sesion4_ej3();
+
+
 
 
 
