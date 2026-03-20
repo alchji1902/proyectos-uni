@@ -15,10 +15,15 @@
 #define SESION4_EJ1_H
 
 
-void menu();
+int menu();
 
+int potencia(float real, int n);
+
+float factorial(unsigned int arg);
 
 void sesion4_ej3();
+
+
 
 
 
