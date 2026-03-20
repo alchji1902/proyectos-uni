@@ -98,10 +98,10 @@ void sesion4_ej4()
             printf("\nEl resultado de la resta es: %d/%d %c %d/%d = %d/%d", f1.num, f1.den, op, f2.num, f2.den, fracres.num, fracres.den);
             break;
         case '*':
-            printf("\nEl resultado de la suma es: %d/%d %c %d/%d = %d/%d", f1.num, f1.den, op, f2.num, f2.den, fracres.num, fracres.den);
+            printf("\nEl resultado de la multiplicacion es: %d/%d %c %d/%d = %d/%d", f1.num, f1.den, op, f2.num, f2.den, fracres.num, fracres.den);
             break;
         case '/':
-            printf("\nEl resultado de la suma es: %d/%d %c %d/%d = %d/%d", f1.num, f1.den, op, f2.num, f2.den, fracres.num, fracres.den);
+            printf("\nEl resultado de la division es: %d/%d %c %d/%d = %d/%d", f1.num, f1.den, op, f2.num, f2.den, fracres.num, fracres.den);
             break;
     }
     
