@@ -17,11 +17,11 @@
 
 unsigned int menu();
 
-float potencia(float real, int n);
+float potencia(float real, unsigned int n);
 
 unsigned long long factorial(unsigned int arg);
 
-float combinatorio(int m, int n);
+unsigned long combinatorio(unsigned int m, unsigned int n);
 
 void sesion4_ej3();
 

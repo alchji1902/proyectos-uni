@@ -30,7 +30,7 @@ unsigned int menu()
 }
 
 
-float potencia(float real, int n)
+float potencia(float real, unsigned int n)
 {
     float res = 1.0;
     
@@ -62,9 +62,10 @@ unsigned long long factorial(unsigned int arg)
 
 
 
-float combinatorio(int m, int n)
+unsigned long combinatorio(unsigned int m, unsigned int n)
 {
-    float res = 0, num, den;
+    unsigned long res = 0;
+    unsigned int num, den;
     
     
     num = factorial(m);
@@ -126,7 +127,7 @@ void sesion4_ej3()
             printf("Introduzca el numero combinatorio (m n): ");
             scanf(" (%d %d)", &m, &n);
             
-            printf("%.2f\n\n", combinatorio(m,n));
+            printf("%lu\n\n", combinatorio(m,n));
         }
         else{
             printf("Ha escogido una opcion incorrecta. Vuelva a intentarlo!");

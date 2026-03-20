@@ -33,7 +33,7 @@ void mostrar_fraccion(t_fraccion f)
 
 
 
-t_fraccion operaciones_fracciones(char operador, t_fraccion f1, t_fraccion f2)
+t_fraccion operacion_fracciones(char operador, t_fraccion f1, t_fraccion f2)
 {
     t_fraccion fracres, frac1, frac2;
     
@@ -72,7 +72,7 @@ t_fraccion operaciones_fracciones(char operador, t_fraccion f1, t_fraccion f2)
 
 void sesion4_ej4()
 {
-    t_fraccion f1, f2;
+    t_fraccion f1, f2, fracres;
     
     char op;
     
@@ -86,7 +86,24 @@ void sesion4_ej4()
     
     scanf(" %c", &op);
     
+    fracres = operacion_fracciones(op, f1, f2);
     
-    printf("\nEl resultado de la suma es: %d/%d %c %d/%d = %d/%d", f1.num, f1.den, op, f2.num, f2.den, operaciones_fracciones(op, f1, f2).num, operaciones_fracciones(op, f1, f2).den);
+    
+    switch (op)
+    {
+        case '+':
+            printf("\nEl resultado de la suma es: %d/%d %c %d/%d = %d/%d", f1.num, f1.den, op, f2.num, f2.den, fracres.num, fracres.den);
+            break;
+        case '-':
+            printf("\nEl resultado de la resta es: %d/%d %c %d/%d = %d/%d", f1.num, f1.den, op, f2.num, f2.den, fracres.num, fracres.den);
+            break;
+        case '*':
+            printf("\nEl resultado de la suma es: %d/%d %c %d/%d = %d/%d", f1.num, f1.den, op, f2.num, f2.den, fracres.num, fracres.den);
+            break;
+        case '/':
+            printf("\nEl resultado de la suma es: %d/%d %c %d/%d = %d/%d", f1.num, f1.den, op, f2.num, f2.den, fracres.num, fracres.den);
+            break;
+    }
+    
     
 }
