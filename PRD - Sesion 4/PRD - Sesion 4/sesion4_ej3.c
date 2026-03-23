@@ -77,11 +77,6 @@ unsigned long combinatorio(unsigned int m, unsigned int n)
     
     return (res);
     
-    
-    
-    
-    
-    
 }
 
 
