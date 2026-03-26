@@ -22,6 +22,21 @@ void exercici6c();
 void exercici6d();
 
 
+void exercici10();
+
+
+void exercici12();
+void exercici13();
+void exercici14();
+
+void exercici15();
+
+
+void exercici16();
+
+
+
+
 
 #endif /* EXERCICIS_H */
 

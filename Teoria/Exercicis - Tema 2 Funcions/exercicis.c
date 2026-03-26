@@ -118,3 +118,120 @@ void exercici7()
     
     mostrar_complex(*cp);
 }
+
+
+
+void exercici10()
+{
+    t_vec_comp vc;
+    
+    vc = llegir_vector_complexos();
+    
+    mostrar(vc);
+    
+    
+}
+
+void exercici12()
+{
+    t_vec_comp vc;
+    
+    vc = llegir_vector_complexos();
+    
+    mostrar(vc);
+    
+    ordenar_seleccio(&vc);
+    
+    mostrar(vc);
+    
+    
+    
+    
+}
+
+void exercici13()
+{
+    t_vec_comp vc;
+    
+    vc = llegir_vector_complexos();
+    
+    mostrar(vc);
+    
+    ordenar_insercio(&vc);
+    
+    mostrar(vc);
+    
+    
+    
+    
+}
+
+
+
+void exercici14()
+{
+    t_vec_comp vc;
+    
+    vc = llegir_vector_complexos();
+    
+    mostrar(vc);
+    
+    ordenar_bombolla(&vc);
+    
+    mostrar(vc);
+    
+    
+    
+    
+}
+
+
+void exercici15()
+{
+    
+    t_vec_comp vc;
+    
+    t_complex c;
+    
+    int pos;
+    
+    vc = llegir_vector_complexos();
+    mostrar(vc);
+
+    printf("\n");
+    c = llegir_complex();
+
+    pos = cerca_binaria(vc, c);
+    
+    if (pos == -1)
+        printf("No existeix cap complex amb modul identic.\n");
+    else
+        printf("Tenim un complex amb modul identic a la posicio %d\n", pos);
+    
+}
+
+void exercici16()
+{
+    
+    t_vec_comp vc;
+    
+    t_complex c;
+    
+    int pos;
+    
+    vc = llegir_vector_complexos();
+    mostrar(vc);
+
+    printf("\n");
+    c = llegir_complex();
+    
+    pos = eliminar(&vc, c);
+    if (pos == -1)
+        printf("Complex no trobat !");
+    
+    else {
+        printf("\n");
+        mostrar(vc);
+        
+    }
+}
