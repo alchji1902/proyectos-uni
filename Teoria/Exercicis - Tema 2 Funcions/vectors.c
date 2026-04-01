@@ -94,27 +94,50 @@ int insereix_valor_ordenat(t_vector *v, int valor)
     
     if (pos == -1)
         v->valors[v->num_valors] = valor;
-    else
+    else 
     {
-        for (i = v->num_valors -1; i < pos; i--)
+        // Si hem trobat una posició, desplacem els elements a la dreta
+        // Comencem des de l'últim element cap enrere fins a 'pos'
+        for (i = v->num_valors - 1; i >= pos; i--) 
         {
-            
+            v->valors[i + 1] = v->valors[i];
         }
+        // Insertem el valor a la posició lliure
+        v->valors[pos] = valor;
     }
+
+    // 4. Incrementem el comptador de valors i retornem èxit
+    v->num_valors++;
+    
+    return 0;
     
     
     /*Opcio d'implementacio mes compacta:
      
-     pos = 0
-     while (pos < v->num_valors && v->valors[pos] < valor)
-        poss++;
-     
-     for (i = v->num_valors-1; i  >= pos; i..)
-        v->valors[i+1] = v->valors[i];
-     
-     
-     v->valors[pos] = valor;
-     v->num_valors++;*/
+    int pos, i;
+
+    // 1. Sempre cal comprovar si hi ha espai!
+    if (v->num_valors >= MAX_VAL) {
+        return -1;
+    }
+
+    // 2. Trobar la posició (compte amb el typo 'poss')
+    pos = 0;
+    while (pos < v->num_valors && v->valors[pos] < valor) {
+        pos++; 
+    }
+
+    // 3. Desplaçar valors a la dreta
+    for (i = v->num_valors - 1; i >= pos; i--) {
+        v->valors[i + 1] = v->valors[i];
+    }
+
+    // 4. Inserir i actualitzar comptador
+    v->valors[pos] = valor;
+    v->num_valors++;
+
+    return 0; */
+   
 }
 
 
