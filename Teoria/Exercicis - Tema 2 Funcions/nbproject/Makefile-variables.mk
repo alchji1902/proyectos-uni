@@ -7,13 +7,13 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU-Linux
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
+CND_PLATFORM_Debug=GNU-MacOSX
+CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
 CND_ARTIFACT_NAME_Debug=exercicis_-_tema_2_funcions
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/exercicis_-_tema_2_funcions
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/exercicis_-_tema_2_funcions
+CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
 CND_PACKAGE_NAME_Debug=exercicis-tema2funcions.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/exercicis-tema2funcions.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/exercicis-tema2funcions.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
