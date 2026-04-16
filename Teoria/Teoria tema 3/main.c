@@ -13,22 +13,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "array_list.h"
+#include "exercicis.h"
+
+
+
 
 /*
  * 
  */
 int main(int argc, char** argv) {
+    
+    exercici7();
 
     return (EXIT_SUCCESS);
 }
-
-
-
-
-
-int vec[80] = {1,2,3,2};
-
-int *vector = &vec;
-
-
-printf("%d", *vec[0]);
