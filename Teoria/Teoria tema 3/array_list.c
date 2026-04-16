@@ -129,19 +129,26 @@ int eliminar(t_array_list *llista, int index)
 {
     int i;
     
-    if (index < 0 || index >= llista->ocupada)
-        return(-2);
-    
-    for (i = index+1; i < llista->ocupada; i++)
-        llista->enters[i-1] = llista->enters[i];
-    
-    
+    int *tmp_ptr;
+
+    if (index < 0 || index >= llista->capacitat)
+        return (-2);
+
+    for (i = index + 1; i < llista->ocupada; i++)
+        llista->enters[i - 1] = llista->enters[i];
+
     llista->ocupada--;
-    
-    if (llista->ocupada < llista->capacitat/4)
+
+    if (llista->ocupada < llista->capacitat / 4)
     {
-        tmp_ptr = (int *)realloc(llista->enters, llista->capacitat * sizeof(int));
+        tmp_ptr = (int *)realloc(llista->enters, llista->capacitat * sizeof(int) / 2);
         
-        
+        if (tmp_ptr == NULL)
+            return (-1);
+
+        llista->capacitat /= 2;
+        llista->enters = tmp_ptr;
     }
+
+    return (0);
 }
