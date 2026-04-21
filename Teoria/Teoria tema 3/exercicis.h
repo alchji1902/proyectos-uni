@@ -16,6 +16,7 @@
 #include "array_list.h"
 
 void exercici7();
+void exercici9();
 
 
 #endif /* EXERCICIS_H */

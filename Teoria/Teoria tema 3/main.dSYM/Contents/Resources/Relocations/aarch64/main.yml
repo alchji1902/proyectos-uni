@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     "/Users/alexch/Documents/Programació/proyectos-uni/Teoria/Teoria tema 3/main"
+relocations:     []
+...

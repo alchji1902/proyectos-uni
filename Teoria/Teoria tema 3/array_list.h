@@ -31,6 +31,10 @@ int add(t_array_list *llista, int valor);
 void mostrar_llista(t_array_list *llista);
 int inserir(t_array_list *llista, int index, int valor);
 int eliminar(t_array_list *llista, int index);
+void ordenar_llista(t_array_list *llista);
+t_array_list * clonar_llista(t_array_list *llista); 
+
+
 
 
 

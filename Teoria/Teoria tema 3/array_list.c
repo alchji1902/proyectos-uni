@@ -57,7 +57,7 @@ int add(t_array_list *llista, int valor)
             return(-1);
         
         
-        llista->capacitat * = 2;
+        llista->capacitat *= 2;
         llista->enters = tmp_ptr;
         
         
@@ -77,11 +77,13 @@ void mostrar_llista(t_array_list *llista)
     
     printf("Capacitat ocupada: %d / %d => {", llista->ocupada, llista->capacitat);
     
-    if (llista->ocupada = 0)
+    if (llista->ocupada > 0)
+    {
         printf("%d", llista->enters[0]);
-    
-    for (i = 1; i < llista->ocupada; i++)
-        printf(", %d", llista->enters[i]);
+
+        for (i = 1; i < llista->ocupada; i++)
+            printf(", %d", llista->enters[i]);
+    }
     
     printf("}\n");
 }
@@ -105,7 +107,7 @@ int inserir(t_array_list * llista, int index, int valor)
         if (tmp_ptr == NULL)
             return (-1);
         
-        llista->capacitat * = 2; 
+        llista->capacitat *= 2; 
         llista->enters = tmp_ptr;
         
         
@@ -131,7 +133,7 @@ int eliminar(t_array_list *llista, int index)
     
     int *tmp_ptr;
 
-    if (index < 0 || index >= llista->capacitat)
+    if (index < 0 || index >= llista->ocupada)
         return (-2);
 
     for (i = index + 1; i < llista->ocupada; i++)
@@ -151,4 +153,55 @@ int eliminar(t_array_list *llista, int index)
     }
 
     return (0);
+}
+
+
+
+void ordenar_llista(t_array_list *llista)
+{
+    int i, j, aux;
+    
+    for (i = 1; i < llista->ocupada; i++)
+    {
+        aux = llista->enters[i];
+        j = i - 1; 
+        
+        while (j >= 0 && llista->enters[j] > aux)
+        {
+            llista->enters[j+1] = llista->enters[j];
+            j--;
+        }
+        
+        llista->enters[j+1] = aux; 
+        
+    }
+}
+
+
+t_array_list * clonar_llista(t_array_list *llista)
+{
+    int i;
+    t_array_list *clon;
+    
+    clon = (t_array_list *)malloc(sizeof(t_array_list));
+    if (clon == NULL)
+        return (NULL);
+    
+    clon->capacitat = llista->capacitat;
+    clon->ocupada = llista->ocupada; 
+    clon->enters = (int *)calloc(clon->capacitat, sizeof(int));
+    if (clon ->enters == NULL)
+    {
+        free(clon);
+        return(NULL);
+    }
+    
+    for (i = 0; i < llista->ocupada; i++)
+        clon->enters[i] = llista->enters[i];
+    
+    
+    /*Aixo el que esta fent es clonar (en diferent direccio de memoria) si no, 
+    apuntaria a la mateixa direccio de memoria que la primera. */
+            
+    return(clon);
 }

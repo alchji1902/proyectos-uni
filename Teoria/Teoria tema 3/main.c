@@ -24,7 +24,7 @@
  */
 int main(int argc, char** argv) {
     
-    exercici7();
+    exercici9();
 
     return (EXIT_SUCCESS);
 }
