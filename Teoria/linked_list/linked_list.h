@@ -35,7 +35,12 @@ int add(t_linked_list *llista, int valor);
 void mostrar_llista(t_linked_list *llista);
 
 
-
+t_node * obtenir_node(t_linked_list *llista, int index);
+int set(t_linked_list *llista, int index, int valor);
+int inserir(t_linked_list *llista, int index, int valor);
+int eliminar(t_linked_list *llista, int index);
+void invertir(t_linked_list *llista);
+void ordenar(t_linked_list *llista);
 
 #endif /* LINKED_LIST_H */
 

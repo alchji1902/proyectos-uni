@@ -92,8 +92,36 @@ int add(t_linked_list *llista, int valor)
     }
     llista->size++; //Incrementem el tamany de la llista un cop afegit el nou node
     return 0;
-}    
+}
 
+
+void mostrar_llista(t_linked_list *llista)
+{
+    t_node *tmp;
+
+    printf("LLista de mida %d: ==> {", llista->size);
+
+    if (llista->head != NULL)
+    {
+        printf("%d", llista->head->valor); //Mostrem el valor del head de la llista
+        tmp = llista->head->next; //Fem una copia del node que apunta al head de la llista, per poder iterar per la llista sense modificar el head
+        while (tmp != NULL) 
+        {
+            printf(" -> %d", tmp->valor); //Mostrem el valor del node actual
+            tmp = tmp->next; //Actualitzem el tmp per apuntar al seguent node de la llista
+        }
+    }
+
+    printf("}\n");
+}
+
+
+
+
+t_node * obtenir_node(t_linked_list *llista, int index)
+{
+    
+}
 
 
 
