@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Depurar Projecte (CodeLLDB)",
+            "program": "${workspaceFolder}/dist/Debug/GNU-MacOSX/linked_list",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "terminal": "integrated",
+            "preLaunchTask": "compilar amb make"
+        }
+    ]
+}
