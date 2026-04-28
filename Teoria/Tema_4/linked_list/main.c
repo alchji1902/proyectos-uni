@@ -20,7 +20,7 @@
  */
 int main(int argc, char** argv) {
     
-    exercici5();
+    exercici9();
 
     return (EXIT_SUCCESS);
 }
