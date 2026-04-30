@@ -223,6 +223,11 @@ void invertir(t_linked_list *llista)
     int *vec; //Vector auxiliar per guardar els valors dels nodes de la llista enllaçada, per poder invertir la llista enllaçada sense modificar els punters dels nodes
     t_node *tmp;
 
+    if (llista == NULL || llista->size <= 1)
+    {
+        return;
+    }
+
     vec = (int *)calloc(llista->size, sizeof(int)); //Reservem memoria per al vector auxiliar
     if (vec == NULL)
     {
@@ -239,8 +244,8 @@ void invertir(t_linked_list *llista)
         i++;
     }
 
-    
-
+    tmp = llista->head; //Tornem a començar des del primer node
+    i = llista->size - 1; //Comencem pel darrer valor del vector
     while (tmp != NULL)
     {
         tmp->valor = vec[i];
