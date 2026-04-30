@@ -72,3 +72,37 @@ void exercici9()
     
     alliberar_llista(llista);
 }
+
+
+void exercici11()
+{
+    t_linked_list *llista;
+    
+    llista = crear_llista();
+    
+    if (llista == NULL)
+    {
+        printf("Error creant la llista enllaçada. \n");
+        return;
+    }
+    
+    printf("%d\n", add(llista, 1));
+    printf("%d\n", add(llista, 2));
+    printf("%d\n", add(llista, 3));
+    printf("%d\n", add(llista, 4));
+    printf("%d\n\n", add(llista, 5));
+    
+    mostrar_llista(llista);
+
+    printf("\nLlista invertida: \n");
+    invertir(llista);
+
+    mostrar_llista(llista);
+
+    printf("\nLlista ordenada: \n");
+    ordenar(llista);
+
+    mostrar_llista(llista);
+
+    alliberar_llista(llista);
+}

@@ -217,3 +217,66 @@ int eliminar(t_linked_list *llista, int index)
 }
 
 
+void invertir(t_linked_list *llista)
+{
+    int i;
+    int *vec; //Vector auxiliar per guardar els valors dels nodes de la llista enllaçada, per poder invertir la llista enllaçada sense modificar els punters dels nodes
+    t_node *tmp;
+
+    vec = (int *)calloc(llista->size, sizeof(int)); //Reservem memoria per al vector auxiliar
+    if (vec == NULL)
+    {
+        //calloc ha fallat
+        return;
+    }
+
+    i = 0;
+    tmp = llista->head; //Fem una copia del node que apunta al head de la llista, per poder iterar per la llista sense modificar el head
+    while (tmp != NULL) //Iterem per la llista fins arribar al final
+    {
+        vec[i] = tmp->valor; //Guardem el valor del node actual al vector
+        tmp = tmp->next; //Actualitzem el tmp per apuntar al seguent node de la llista
+        i++;
+    }
+
+    
+
+    while (tmp != NULL)
+    {
+        tmp->valor = vec[i];
+        tmp = tmp->next;
+        i--;
+    }
+
+    free(vec); //Alliberem la memoria del vector auxiliar
+}
+
+
+
+void ordenar(t_linked_list *llista)
+{
+    t_node *tmp_i, *tmp_j, *tmp_imin;
+    int aux;
+    tmp_i = llista->head; //Fem una copia del node que apunta al head de la llista, per poder iterar per la llista sense modificar el head
+    while (tmp_i != NULL) //Iterem per la llista fins arribar al final
+    {
+        tmp_imin = tmp_i; //Inicialitzem el node que representa la posicio de l'index de la llista enllaçada amb el node actual del primer bucle
+        tmp_j = tmp_i->next; //Fem una copia del node que apunta al seguent del node actual del primer bucle, per poder iterar per la llista sense modificar el node actual del primer bucle
+        while (tmp_j != NULL) //Iterem per la llista fins arribar al final
+        {
+            if (tmp_j->valor < tmp_imin->valor) //Si el valor del node actual es mes petit que el valor del node minim
+            {
+                tmp_imin = tmp_j; //Actualitzem el node que representa la posicio de l'index de la llista enllaçada amb el node actual del segon bucle
+            }
+            tmp_j = tmp_j->next; //Actualitzem el tmp per apuntar al seguent node de la llista
+        }
+        //Intercanviem els valors del node actual i el node minim
+        if (tmp_imin != tmp_i) //Si el node minim es diferent al node actual del primer bucle, intercanviem els valors dels nodes
+        {
+            aux = tmp_i->valor; //Guardem el valor del node actual del primer bucle en una variable auxiliar
+            tmp_i->valor = tmp_imin->valor; //Actualitzem el valor del node actual del primer bucle con el valor del node minim
+            tmp_imin->valor = aux; //Actualitzem el valor del node minim con el valor guardado en la variable auxiliar
+        }
+        tmp_i = tmp_i->next; //Actualitzem el tmp per apuntar al seguent node de la llista
+    }
+}

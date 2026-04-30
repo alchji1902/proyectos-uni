@@ -7,20 +7,16 @@
  * File:   main.c
  * Author: alexch
  *
- * Created on 23 d’abril del 2026, 8:33
+ * Created on 30 d’abril del 2026, 9:42
  */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "exercicis.h"
-
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-    
-    exercici11();
 
     return (EXIT_SUCCESS);
 }

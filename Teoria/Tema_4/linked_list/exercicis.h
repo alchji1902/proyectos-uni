@@ -17,5 +17,6 @@
 
 void exercici5();
 void exercici9();
+void exercici11();
 
 #endif /* EXERCICIS_H */
