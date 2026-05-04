@@ -151,7 +151,7 @@ int eliminar(t_array_list *llista, int index)
         llista->capacitat /= 2;
         llista->enters = tmp_ptr;
     }
-
+    
     return (0);
 }
 
