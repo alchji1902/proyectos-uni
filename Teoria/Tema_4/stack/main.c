@@ -22,6 +22,7 @@ int main(int argc, char** argv) {
 
     t_stack *pila = crear_pila();
     int valor, res;
+    
     if (pila == NULL)
         return EXIT_FAILURE;
 
