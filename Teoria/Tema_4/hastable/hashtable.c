@@ -139,3 +139,24 @@ int put(t_hasht *taula, t_nif nif, t_persona p)
     return 0; /* S'ha inserit la persona a la taula hash correctament */
 
 }
+
+
+t_persona * get(t_hasht *taula, t_nif nif)
+{
+    int c;
+    t_node *tmp;
+
+    c = nif.num % taula->ncas;
+
+    tmp = taula->array_caselles[c]; /* Apuntem al primer node de la llista enllaçada de la casella c */
+
+    while(tmp != NULL)
+    {
+        if (tmp->p.nif.num == nif.num)
+            return &(tmp->p); /* Retornem un punter a la persona que estem buscant */
+
+        tmp = tmp->next;
+    }
+    return NULL; /* No s'ha trobat cap persona amb el NIF nif a la taula hash */
+}
+
