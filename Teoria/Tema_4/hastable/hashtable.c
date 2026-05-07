@@ -160,3 +160,40 @@ t_persona * get(t_hasht *taula, t_nif nif)
     return NULL; /* No s'ha trobat cap persona amb el NIF nif a la taula hash */
 }
 
+
+int eliminar(t_hasht *taula, t_nif nif)
+{
+    int c;
+
+    t_node *tmp, *tmp2;
+
+    if (!conte_persona(taula, nif))
+        return -2;
+    
+    c = nif.num % taula->ncas;
+
+    if (taula->array_caselles[c]->p.nif.num == nif.num)
+    {
+        tmp = taula->array_caselles[c];
+        taula->array_caselles[c] = taula->array_caselles[c]->next;
+        free(tmp);
+    }
+
+    else
+    {
+        tmp = taula->array_caselles[c];
+
+        while (tmp->next->p.nif.num != nif.num)
+        /* Sabem que la persona segur que existeix perque ho comprovem adalt. 
+        Si no, tot aixo ho hauriem d'implementar amb el tmp->next != NULL */
+            tmp = tmp->next;
+
+        tmp2 = tmp->next;
+        tmp->next = tmp->next->next;
+        free(tmp2);
+    }
+
+    return 0; /* S'ha eliminat la persona amb el NIF nif de la taula hash correctament */   
+}
+
+
