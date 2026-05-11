@@ -84,3 +84,35 @@ void sesion6_ej3b()
     
     mostrar_lista(lista);
 }
+
+
+void sesion6_ej3c()
+{
+    int i;
+    t_nif nif;
+    int val; 
+
+    t_array_list * lista;
+    lista = crear_lista();
+    
+    for (i = 0; i < 7; i++)
+            
+    insertar_en_orden(lista, generar_nif_aleatorio());
+    
+    mostrar_lista(lista);
+
+    printf("Introduce el nif a buscar: ");
+    scanf("%d%c", nif.numero, nif.letra);
+
+    val = buscar_registro_ordenado(lista, nif);
+
+    if (val == -1)
+        printf("Nif no encontrado....");
+    
+    else
+        printf("Nif encontrado en la posición: %d", val);
+    
+    
+
+    
+}

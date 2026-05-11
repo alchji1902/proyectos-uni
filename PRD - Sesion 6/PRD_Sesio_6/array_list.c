@@ -141,3 +141,29 @@ int insertar_en_orden(t_array_list *lista, t_nif nif)
     return(0);
     
 }
+
+
+int buscar_registro_ordenado(t_array_list *lista, t_nif nif)
+{
+    int left = 0;
+    int mid; 
+    int right = lista->ocupada -1;
+
+    while (left <= right)
+    {
+        mid = (left + right) / 2;
+
+        if(lista->nifs[mid].numero == nif.numero)
+            return(mid);
+        
+        if (lista->nifs[mid].numero < nif.numero)
+            left = mid + 1;
+        
+        else 
+            right = mid - 1;
+
+    }
+
+    return (-1);
+
+}
