@@ -22,7 +22,7 @@
 int main(int argc, char** argv) {
     
     srand(time(NULL));
-    sesion6_ej3c();
+    sesion6_ej4();
     
     return (EXIT_SUCCESS);
 }

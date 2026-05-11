@@ -99,13 +99,10 @@ void ordenar_lista_por_nif(t_array_list *lista)
             lista->nifs[j+1] = lista->nifs[j];
             j--;    
         }
-        
+
         lista->nifs[j+1] = elem;
         
     }
-    
-    
-    
 }
 
 
@@ -129,8 +126,6 @@ int insertar_en_orden(t_array_list *lista, t_nif nif)
         lista->capacidad *=2;
 
     }
-    
-    
     for (i = lista->ocupada -1; i >= pos; i--)
     {
         lista->nifs[i+1] = lista->nifs[i];
@@ -161,9 +156,38 @@ int buscar_registro_ordenado(t_array_list *lista, t_nif nif)
         
         else 
             right = mid - 1;
-
     }
-
     return (-1);
+}
 
+
+int eliminar_nif(t_array_list *lista, t_nif nif)
+{
+    int i, pos;
+
+    pos = buscar_registro_ordenado(lista, nif);
+
+    if (pos == -1)
+        return(0);
+    
+    else{
+        for (i = pos + 1; i < lista->ocupada; i++){
+            lista->nifs[i-1] = lista->nifs[i];
+        }
+        lista->ocupada--;
+        
+        if (lista->ocupada < lista->capacidad / 4){
+            t_nif *tmp;
+            tmp = (t_nif *)realloc(lista->nifs, (lista->capacidad / 2) * sizeof(t_nif));
+
+            if (tmp == NULL)
+                return(-1);
+
+            lista->capacidad = lista->capacidad / 2;
+            lista->nifs = tmp;
+        }
+
+        return(1);
+        
+    }
 }
