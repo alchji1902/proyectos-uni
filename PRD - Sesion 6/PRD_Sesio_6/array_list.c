@@ -124,7 +124,7 @@ int insertar_en_orden(t_array_list *lista, t_nif nif)
     }
     
     lista->nifs[pos] = nif;
-    lista->nifs++;
+    lista->ocupada++;
     return(0);
     
 }

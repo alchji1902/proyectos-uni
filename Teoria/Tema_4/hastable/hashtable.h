@@ -19,17 +19,15 @@ typedef struct{
     char lletra;
 }t_nif;
 
+typedef struct{
+    t_nif nif;
+    char nom[20];
+}t_persona;
 
 typedef struct node{
     t_persona p;
     struct node * next; 
 }t_node;
-
-
-typedef struct{
-    t_nif nif;
-    char nom[20];
-}t_persona;
 
 
 typedef struct{
