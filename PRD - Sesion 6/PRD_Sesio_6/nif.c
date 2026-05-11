@@ -19,7 +19,7 @@ t_nif generar_nif_aleatorio()
 
     /* ... */
     
-    nif.numero = 100000000 + rand()%89999999;
+    nif.numero = 10000000 + rand() % 90000000;
     nif.letra = letras[nif.numero % 23];
     
     return (nif);

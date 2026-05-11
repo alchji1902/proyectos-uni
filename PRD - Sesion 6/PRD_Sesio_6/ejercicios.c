@@ -67,7 +67,11 @@ void sesion6_ej3a()
     
     ordenar_lista_por_nif(lista);
     
-    mostrar_lista(lista);  
+    mostrar_lista(lista); 
+    
+    liberar_lista(lista);
+    
+    
 }
 
 
@@ -83,6 +87,8 @@ void sesion6_ej3b()
     insertar_en_orden(lista, generar_nif_aleatorio());
     
     mostrar_lista(lista);
+    
+    liberar_lista(lista);
 }
 
 
@@ -113,6 +119,8 @@ void sesion6_ej3c()
     
     else
         printf("Nif encontrado en la posición: %d\n", val);
+    
+    liberar_lista(lista);
 }
 
 
@@ -148,6 +156,6 @@ void sesion6_ej4()
     else
         printf("Ha habido un problema al relocar la memoria. \n");
     
-
-
+    liberar_lista(lista);
+    
 }
