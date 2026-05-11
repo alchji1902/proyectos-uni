@@ -32,4 +32,56 @@ void sesion6_ej1()
 }
 
 
+void sesion6_ej2()
+{
+    int i;
+    
+    t_array_list * lista;
+    lista = crear_lista();
+    
+    for (i = 0; i < 7; i++)
+        add(lista, generar_nif_aleatorio());
+    
+    mostrar_lista(lista);
+    
+    for (i = 0; i < 4; i++)
+        add(lista, generar_nif_aleatorio());
+    
+    mostrar_lista(lista);
+    
+    liberar_lista(lista);
+    
+}
 
+void sesion6_ej3a()
+{
+    int i;
+    
+    t_array_list * lista;
+    lista = crear_lista();
+    
+    for (i = 0; i < 7; i++)
+        add(lista, generar_nif_aleatorio());
+    
+    mostrar_lista(lista);
+    
+    ordenar_lista_por_nif(lista);
+    
+    mostrar_lista(lista);  
+}
+
+
+void sesion6_ej3b()
+{
+    int i;
+    
+    t_array_list * lista;
+    lista = crear_lista();
+    
+    for (i = 0; i < 7; i++)
+        if (lista->capacidad = lista->capacidad)
+            
+        insertar_en_orden(lista, generar_nif_aleatorio());
+    
+    mostrar_lista(lista);
+}

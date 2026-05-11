@@ -12,14 +12,15 @@
 
 
 
-t_array_list * crear_llista()
+t_array_list * crear_lista()
 {
-    t_array_list list = malloc(sizeof(t_array_list));
+    t_array_list *list = malloc(sizeof(t_array_list));
     
     if (list == NULL)
         return(NULL);
     
     list->capacidad = CAPACIDAD_INICIAL;
+    list->ocupada = 0;
     
     list->nifs = calloc(list->capacidad, sizeof(int) * CAPACIDAD_INICIAL);
     
@@ -46,7 +47,84 @@ void liberar_lista(t_array_list *lista)
 
 int add(t_array_list *lista, t_nif nif)
 {
+    t_nif *tmp;
     
+    if (lista->capacidad == lista->ocupada)
+    {
+        tmp = (t_nif *)realloc(lista->nifs, (lista->capacidad * 2) * sizeof(t_nif));
+        
+        if (tmp == NULL)
+            return(-1);
+            
+        lista->capacidad *=2;
+        lista->nifs = tmp;
+    }
+    
+    lista->nifs[lista->ocupada] = nif;
+    lista->ocupada++;
+    
+    return(0);
+    
+    
+}
 
+
+
+void mostrar_lista(t_array_list *list)
+{
+    printf("Mostrando contenido de la lista (capacidad ocupada: %d/%d)\n", list->ocupada, list->capacidad);
+    
+    int i;
+    
+    for (i = 0; i < list->ocupada; i++)
+    {
+        mostrar_nif(list->nifs[i]);
+        printf("\n");
+    }
+}
+
+
+
+void ordenar_lista_por_nif(t_array_list *lista)
+{
+    int i, j;
+            
+    t_nif elem;
+    
+    for (i = 1; i < lista->ocupada; i++){
+        elem = lista->nifs[i];
+        j = i - 1;
+        
+        while(j>=0 && comparar_nifs(lista->nifs[j], elem) == 1){
+            lista->nifs[j+1] = lista->nifs[j];
+            j--;    
+        }
+        
+        lista->nifs[j+1] = elem;
+        
+    }
+    
+    
+    
+}
+
+
+
+int insertar_en_orden(t_array_list *lista, t_nif nif)
+{
+    int i, pos = 0;
+    
+    while (pos < lista->ocupada && comparar_nifs(lista->nifs[pos], nif) == 1)
+        pos++;
+    
+    
+    for (i = lista->ocupada -1; i >= pos; i--)
+    {
+        lista->nifs[i+1] = lista->nifs[i];
+    }
+    
+    lista->nifs[pos] = nif;
+    lista->nifs++;
+    return(0);
     
 }
