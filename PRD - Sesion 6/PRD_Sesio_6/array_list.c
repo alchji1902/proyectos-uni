@@ -22,7 +22,7 @@ t_array_list * crear_lista()
     list->capacidad = CAPACIDAD_INICIAL;
     list->ocupada = 0;
     
-    list->nifs = calloc(list->capacidad, sizeof(int) * CAPACIDAD_INICIAL);
+    list->nifs = calloc(list->capacidad, sizeof(t_nif));
     
     if (list->nifs == NULL){
         free(list);
@@ -114,8 +114,21 @@ int insertar_en_orden(t_array_list *lista, t_nif nif)
 {
     int i, pos = 0;
     
-    while (pos < lista->ocupada && comparar_nifs(lista->nifs[pos], nif) == 1)
+    while (pos < lista->ocupada && comparar_nifs(lista->nifs[pos], nif) == -1)
         pos++;
+    
+    if (lista->capacidad == lista->ocupada){
+        t_nif *tmp;
+
+        tmp = (t_nif *)realloc(lista->nifs, (lista->capacidad * 2) * sizeof(t_nif));
+
+        if (tmp == NULL)
+            return(-1);
+        
+        lista->nifs = tmp;
+        lista->capacidad *=2;
+
+    }
     
     
     for (i = lista->ocupada -1; i >= pos; i--)
