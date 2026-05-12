@@ -75,7 +75,7 @@ int main(int argc, char** argv) {
         printf("La taula hash no conte la persona buscada\n");
     }
 
-    alliberar_taulaº(taula);
+    alliberar_taula(taula);
 
     return (EXIT_SUCCESS);
 }
