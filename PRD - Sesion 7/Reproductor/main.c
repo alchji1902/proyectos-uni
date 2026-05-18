@@ -14,7 +14,7 @@
  */
 int main(int argc, char** argv) {
 
-    ejercicio1();
+    ejercicio2();
     return (EXIT_SUCCESS);
 }
 

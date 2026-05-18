@@ -166,59 +166,38 @@ int insertar_cancion(t_lista_rep *lista, t_cancion c, int pos)
     }
     
     else {
-        if (pos < lista->size / 2){
-            /*Tengo que recorrer la lista desde head hacia adelante hasta apuntar al nodo que representa la 
-             * posición pos de la lista, con un puntero a variable de tipo t_node. */
+        if (pos <= lista->size / 2){ /* Ens pot caure tambe just al mig, i tambe hauriem d'afegir-lo. Per això no posem nomes condicio estricta pos < lista->size */
+            /* He de recórrer la llista des de head cap endavant fins a apuntar al node que representa la 
+             * posició pos de la llista, amb un punter a una variable de tipus t_node. */
             
             aux = lista->head;
             
-            int i = 1;
+            int i = 0; // Aquest comença a 0, perque si no 1 != 1, llavors mai entraria i podriem colocar a la posició 1. 
             
             while (i != pos){
                 aux = aux->next;
                 i++;
             }
-            
-            tmp->prev = aux->prev;
-            tmp->next = aux;
-            aux->prev->next = tmp;
-            aux->prev = tmp;
         }
         
-        if (pos > lista->size / 2){
+        else { /*(pos > lista->size / 2)*/
             /*En caso contrario, la función debe recorrer la lista desde tail hacia atrás hasta apuntarlo. */
             aux = lista->tail;
             
-            int i = lista->size -1;
+            int i = lista->size -1; // Aquest necesita estar amb el -1, perque si no, el size p.ex: 10, la tail estaria a la 9
+            // perque van del 0 al 9, en canvi el size va del 1 al 10. 
             
             while (i != pos){
                 aux = aux->prev;
                 i--;
             }
-            
-            tmp->prev = aux->prev;
-            tmp->next = aux;
-            aux->prev->next = tmp;
-            aux->prev = tmp;
         }
         
+        tmp->prev = aux->prev;
+        tmp->next = aux;
+        aux->prev->next = tmp;
+        aux->prev = tmp;
         
-        else {
-            /* Ens pot caure tambe just al mig, i tambe hauriem d'afegir-lo. */
-            pos = lista->size / 2;
-            
-            int i = 1;
-            
-            while (i != pos){
-                aux = aux->next;
-                i++;
-            }
-            
-            tmp->prev = aux->prev;
-            tmp->next = aux;
-            aux->prev->next = tmp;
-            aux->prev = tmp;
-        }
     }
     
     lista->size++;
@@ -228,6 +207,13 @@ int insertar_cancion(t_lista_rep *lista, t_cancion c, int pos)
 
 int eliminar_cancion(t_lista_rep *lista, int pos)
 {
+
+    
+    if (pos < 0 || pos > lista->size)
+        return (INDEX_ERROR);
+    
+    
+    
     
     
     
