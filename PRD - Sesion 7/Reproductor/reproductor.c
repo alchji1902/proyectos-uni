@@ -130,7 +130,7 @@ void reproducir(t_lista_rep *lista)
 int insertar_cancion(t_lista_rep *lista, t_cancion c, int pos)
 {
     
-    t_node *tmp;
+    t_node *tmp, *aux;
     
     if (pos < 0 || pos > lista->size)
         return (INDEX_ERROR);
@@ -144,13 +144,84 @@ int insertar_cancion(t_lista_rep *lista, t_cancion c, int pos)
     tmp->cancion = c;
     
     
-    if (pos == 0){
-        
+    if (pos == 0 && lista->size == 0){
+        lista->head = tmp;
+        lista->tail = tmp;
+        tmp->next = NULL;
+        tmp->prev = NULL;
     }
     
+    else if (pos == 0 && lista->size != 0){
+        tmp->next = lista->head;
+        tmp->prev = NULL;
+        lista->head->prev = tmp;
+        lista->head = tmp;
+    }
     
+    else if (pos == lista->size && lista->size != 0){
+        tmp->prev = lista->tail;
+        tmp->next = NULL;
+        lista->tail->next = tmp;
+        lista->tail = tmp;
+    }
     
+    else {
+        if (pos < lista->size / 2){
+            /*Tengo que recorrer la lista desde head hacia adelante hasta apuntar al nodo que representa la 
+             * posición pos de la lista, con un puntero a variable de tipo t_node. */
+            
+            aux = lista->head;
+            
+            int i = 1;
+            
+            while (i != pos){
+                aux = aux->next;
+                i++;
+            }
+            
+            tmp->prev = aux->prev;
+            tmp->next = aux;
+            aux->prev->next = tmp;
+            aux->prev = tmp;
+        }
+        
+        if (pos > lista->size / 2){
+            /*En caso contrario, la función debe recorrer la lista desde tail hacia atrás hasta apuntarlo. */
+            aux = lista->tail;
+            
+            int i = lista->size -1;
+            
+            while (i != pos){
+                aux = aux->prev;
+                i--;
+            }
+            
+            tmp->prev = aux->prev;
+            tmp->next = aux;
+            aux->prev->next = tmp;
+            aux->prev = tmp;
+        }
+        
+        
+        else {
+            /* Ens pot caure tambe just al mig, i tambe hauriem d'afegir-lo. */
+            pos = lista->size / 2;
+            
+            int i = 1;
+            
+            while (i != pos){
+                aux = aux->next;
+                i++;
+            }
+            
+            tmp->prev = aux->prev;
+            tmp->next = aux;
+            aux->prev->next = tmp;
+            aux->prev = tmp;
+        }
+    }
     
+    lista->size++;
     
     return (ACTION_SUCCESS);
 }
