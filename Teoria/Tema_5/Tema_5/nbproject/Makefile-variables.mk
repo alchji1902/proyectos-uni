@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=reproductor
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/reproductor
+CND_ARTIFACT_NAME_Debug=tema_5
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/tema_5
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=reproductor.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/reproductor.tar
+CND_PACKAGE_NAME_Debug=tema5.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/tema5.tar
 # Release configuration
-CND_PLATFORM_Release=GNU-Linux
-CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=reproductor
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/reproductor
-CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=reproductor.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/reproductor.tar
+CND_PLATFORM_Release=GNU-MacOSX
+CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
+CND_ARTIFACT_NAME_Release=tema_5
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/tema_5
+CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
+CND_PACKAGE_NAME_Release=tema5.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/tema5.tar
 #
 # include compiler specific variables
 #
