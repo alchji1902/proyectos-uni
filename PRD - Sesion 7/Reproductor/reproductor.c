@@ -97,10 +97,13 @@ void reproducir(t_lista_rep *lista)
     
     t_node *tmp;
     
+    tmp = lista->head;
+    
     while (option != 'e'){
         
         printf("Esta sonado: ");
         mostrar_cancion(tmp->cancion);
+        printf("\n");
         printf("[n]ext, [b]ack, [e]nd: ");
         scanf("%c%*c", &option);
         
@@ -110,27 +113,55 @@ void reproducir(t_lista_rep *lista)
             case 'n':
                 if (tmp->next == NULL)
                     tmp = lista->head;
-                tmp = tmp->next;
+                else {
+                    tmp = tmp->next;
+                }
                 break;
             case 'b':
                 if (tmp->prev == NULL)
                     tmp = lista->tail;
-                tmp = tmp->prev;
-        }
-        
+                else {
+                    tmp = tmp->prev;
+                }       
+        }        
     }
-    
-    printf("Cerrando aplicacion....");
 }
 
 int insertar_cancion(t_lista_rep *lista, t_cancion c, int pos)
 {
-    /* Falta implementar */
+    
+    t_node *tmp;
+    
+    if (pos < 0 || pos > lista->size)
+        return (INDEX_ERROR);
+    
+    
+    tmp = (t_node *)malloc(sizeof(t_node));
+    
+    if (tmp == NULL)
+        return (MEM_ALLOC_FAILURE);
+    
+    tmp->cancion = c;
+    
+    
+    if (pos == 0){
+        
+    }
+    
+    
+    
+    
+    
     return (ACTION_SUCCESS);
 }
 
 int eliminar_cancion(t_lista_rep *lista, int pos)
 {
-    /* Falta implementar */
+    
+    
+    
+    
+    
+    
     return (ACTION_SUCCESS);
 }
