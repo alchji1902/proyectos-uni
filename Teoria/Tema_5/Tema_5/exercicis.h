@@ -17,6 +17,13 @@
 void exercici1();
 void exercici2();
 void exercici3();
+void exercici4();
+void exercici5();
+void exercici6();
+void exercici7();
+void exercici8();
+void exercici9();
+
 
 
 
