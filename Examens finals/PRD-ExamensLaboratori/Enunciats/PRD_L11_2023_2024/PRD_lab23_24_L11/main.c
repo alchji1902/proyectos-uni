@@ -13,8 +13,10 @@ int main(int argc, char** argv) {
     t_elector elector2 = {{222222222, 'D'}, "Juanito", "Garcia", "Garcia", NO};
     t_elector elector3 = {{333333333, 'I'}, "Jorgito", "Lopez", "Lopez", NO};
     
-    inicializar_electorado(&elect);
-    inicializar_votos(&votos);
+    if (inicializar_electorado(&elect) == -1)
+        return (EXIT_FAILURE);
+    if (inicializar_votos(&votos) == -1)
+        return (EXIT_FAILURE);
     
     if (anyadir_elector(&elect, elector1) == -1)
         printf("Error anyadiendo elector\n");
@@ -69,7 +71,7 @@ int main(int argc, char** argv) {
     mostrar_votos(votos);
     
     
-    
+    liberar_votos(&votos);
     
     return (EXIT_SUCCESS);
 }

@@ -28,6 +28,7 @@ void liberar_lista_reproduccion(t_lista_rep *lista)
     t_node *tmp;
     
     if (lista->size == 0)
+        free(lista);
         return;
     
     while (lista->head != NULL){
@@ -36,6 +37,7 @@ void liberar_lista_reproduccion(t_lista_rep *lista)
         lista->size--;
         lista->head = tmp;
     }
+    free(lista);
 }
 
 int add_cancion_final(t_lista_rep *lista, t_cancion c)
@@ -198,7 +200,7 @@ int insertar_cancion(t_lista_rep *lista, t_cancion c, int pos)
         aux->prev->next = tmp;
         aux->prev = tmp;
         
-    }
+    } 
     
     lista->size++;
     
@@ -207,17 +209,53 @@ int insertar_cancion(t_lista_rep *lista, t_cancion c, int pos)
 
 int eliminar_cancion(t_lista_rep *lista, int pos)
 {
-
+    t_node *aux;
     
     if (pos < 0 || pos > lista->size)
         return (INDEX_ERROR);
     
+    if (pos <= lista->size){
+        aux = lista->head;
+            
+            int i = 0;
+            
+            while (i != pos){
+                aux = aux->next;
+                i++;
+            }
+    }
+    else {
+            aux = lista->tail;
+            
+            int i = lista->size -1;
+            
+            while (i != pos){
+                aux = aux->prev;
+                i--;
+            }
+    }
     
     
+    if (aux->prev == NULL){
+        aux->next->prev = NULL;
+        lista->head = aux->next;
+        free(aux);
+    }
     
+    else if (aux->next == NULL){
+        aux->prev->next = NULL;
+        lista->tail = aux->prev;
+        free(aux);
+    }
     
+    else {
+        aux->prev->next = aux->next;
+        aux->next->prev = aux->prev;
+        free(aux);
     
+    }
     
+    lista->size--;
     
     
     return (ACTION_SUCCESS);

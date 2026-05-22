@@ -60,6 +60,9 @@ int votar_elector (t_electorado *l_elect, t_votos *v, t_nif n, int voto)
     if (encontrado == -1)
         return -1;
     
+    if (l_elect->electores[encontrado].ha_votado == SI)
+        return -1;
+    
     able = votar(v, voto);
 
     if (able == -1)
