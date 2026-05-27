@@ -9,6 +9,7 @@ void grupo11()
     
     if (list == NULL){
         printf("Error creando lista. \n");
+        return;
     }
     
     mostrar_lista_videos(list);
@@ -34,6 +35,8 @@ void grupo11()
     printf("\n");
     mostrar_lista_videos(list);
     printf("\n");
+    
+    free_lista_videos(list);
 }
 
 /* Operaciones video */
@@ -159,6 +162,7 @@ int insertar_video_ordenado_asc (t_video_list *lista, t_video v)
     
     nuevo->next = tmp->next; 
     tmp->next = nuevo;
+    lista->size++;
     
     return (insertado);
     
