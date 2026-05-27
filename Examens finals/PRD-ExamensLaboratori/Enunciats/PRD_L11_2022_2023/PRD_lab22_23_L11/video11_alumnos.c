@@ -125,7 +125,7 @@ void mostrar_lista_videos (t_video_list *lista)
 
 int insertar_video_ordenado_asc (t_video_list *lista, t_video v)
 {     
-    int insertado = 0, pos = -1;
+    int insertado = 0;
     t_nodo *tmp, *nuevo;
     
     nuevo = (t_nodo *)malloc(sizeof(t_nodo));
@@ -136,31 +136,30 @@ int insertar_video_ordenado_asc (t_video_list *lista, t_video v)
     
     nuevo->v = v;
     
-    tmp = lista->head;
-    
-    if (lista->size == 0){
+    if (lista->head == NULL) {
         lista->head = nuevo;
         lista->head->next = NULL;
+        lista->size++;
+        return (insertado);
+    } 
+    
+    if (nuevo->v.reproducciones < lista->head->v.reproducciones) {
+        nuevo->next = lista->head;
+        lista->head = nuevo;
         lista->size++;
         return(insertado);
     }
     
-    while ((lista->size > pos) && (tmp->v.reproducciones < nuevo->v.reproducciones)){
-        if (tmp->next->v.reproducciones > nuevo->v.reproducciones)
-            tmp = tmp->next;
-        pos++;
+    tmp = lista->head;
+    
+    while((tmp->next != NULL) && (tmp->next->v.reproducciones < nuevo->v.reproducciones)){
+        tmp = tmp->next;
     }
     
-    if (pos == -1){
-        tmp->next = nuevo;
-        nuevo->next = NULL;
-        lista->size++;
-        return (insertado);
-    }
     
-    nuevo->next = tmp->next;
-    lista->size++;
+    nuevo->next = tmp->next; 
+    tmp->next = nuevo;
     
-    return insertado;
+    return (insertado);
+    
 }
-
