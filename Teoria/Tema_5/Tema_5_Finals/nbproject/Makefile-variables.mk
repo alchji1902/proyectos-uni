@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=prd_lab22_23_l11
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/prd_lab22_23_l11
+CND_ARTIFACT_NAME_Debug=tema_5_finals
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/tema_5_finals
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=prdlab2223l11.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/prdlab2223l11.tar
+CND_PACKAGE_NAME_Debug=tema5finals.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/tema5finals.tar
 # Release configuration
-CND_PLATFORM_Release=MinGW-Windows
-CND_ARTIFACT_DIR_Release=dist/Release/MinGW-Windows
-CND_ARTIFACT_NAME_Release=lab22_23
-CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/lab22_23
-CND_PACKAGE_DIR_Release=dist/Release/MinGW-Windows/package
-CND_PACKAGE_NAME_Release=lab2223.tar
-CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/lab2223.tar
+CND_PLATFORM_Release=GNU-MacOSX
+CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
+CND_ARTIFACT_NAME_Release=tema_5_finals
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/tema_5_finals
+CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
+CND_PACKAGE_NAME_Release=tema5finals.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/tema5finals.tar
 #
 # include compiler specific variables
 #

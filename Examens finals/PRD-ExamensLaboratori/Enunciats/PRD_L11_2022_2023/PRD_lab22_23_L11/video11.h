@@ -13,15 +13,22 @@ typedef struct {
     int reproducciones;    
 } t_video;
 
+
+
+
 typedef struct nodo {
     t_video v;
     struct nodo *next;
 } t_nodo;
 
+
+
 typedef struct {
     int size;
     t_nodo *head;
 }t_video_list;
+
+
 
 /* Operaciones video */
 t_video leer_video ();

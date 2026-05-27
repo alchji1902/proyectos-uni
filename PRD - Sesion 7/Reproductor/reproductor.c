@@ -15,11 +15,11 @@ t_lista_rep *crear_lista_reproduccion()
     
     list = (t_lista_rep *)malloc(sizeof(t_lista_rep));
     
-    if (list != NULL)
+    if (list != NULL) {
         list->head = NULL;
         list->tail = NULL;
         list->size = 0;
-
+    }
     return (list);
 }
 
@@ -27,9 +27,10 @@ void liberar_lista_reproduccion(t_lista_rep *lista)
 {
     t_node *tmp;
     
-    if (lista->size == 0)
+    if (lista->size == 0){
         free(lista);
         return;
+    } 
     
     while (lista->head != NULL){
         tmp = lista->head->next;
@@ -37,6 +38,7 @@ void liberar_lista_reproduccion(t_lista_rep *lista)
         lista->size--;
         lista->head = tmp;
     }
+    
     free(lista);
 }
 
