@@ -40,6 +40,32 @@ void exercici1()
 }
 
 
+void exercici1_2()
+{
+    char seq[32];
+    unsigned int valor = 0; // Utilitzem unsigned per evitar problemes amb el bit de signe
+    int i;
+
+    printf("Introdueix la sequencia de bits: ");
+    if (scanf("%31s", seq) != 1) return; // Control d'errors simple
+
+    for (i = 0; i < strlen(seq); i++)
+    {
+        // Desplac em l'acumulat una posició a l'esquerra (multiplica per 2)
+        valor = valor << 1; 
+        
+        // Si el caràcter és '1', sumem 1. Si és '0', no sumem res.
+        if (seq[i] == '1')
+        {
+            valor = valor | 1; // Operació OR a nivell de bits per posar el bit a 1
+        }
+    }
+    
+    printf("Valor en base10: %u\n", valor);
+    printf("Valor en base16: %x\n", valor);
+}
+
+    
 void exercici2()
 {
     char seq[32];
